@@ -45,8 +45,18 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
-  describe 'GET #edit' do
+  describe 'GET #new' do
+    it 'renders the new question template' do
+      get :new
+      expect(response).to render_template(:new)
+    end
+  end
 
+  describe 'GET #edit' do
+    let(:myquestion) { FactoryGirl.create :question }
+    before(:each) do
+      get :edit, id: myquestion.id
+    end
   end
 
   describe 'PUT #update' do

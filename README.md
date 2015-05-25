@@ -17,8 +17,8 @@ Process: Base app created as a full rails app, other technologies will be added 
     1. Create routes && redirect home page to questions routes √
     2. Rails generate controllers √
     3. Seed file for Question and Answers using Faker √
-    4. Rspec create tests 
-    4. Write create routes (N.B Use form partials)
+    4. Rspec create tests √
+    5. Write create routes (N.B Use form partials) √
     5. Rspec Edit tests
     6. Write Edit routes
     7. Write Delete tests
