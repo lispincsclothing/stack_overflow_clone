@@ -54,8 +54,9 @@ RSpec.describe QuestionsController, type: :controller do
 
   describe 'GET #edit' do
     let(:myquestion) { FactoryGirl.create :question }
-    before(:each) do
+    it "renders the #edit page" do
       get :edit, id: myquestion.id
+      expect(response).to render_template :edit
     end
   end
 

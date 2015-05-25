@@ -19,11 +19,11 @@ Process: Base app created as a full rails app, other technologies will be added 
     3. Seed file for Question and Answers using Faker √
     4. Rspec create tests √
     5. Write create routes (N.B Use form partials) √
-    6. Integrate CI (via Travis CI) 
-    5. Rspec Edit tests
-    6. Write Edit routes
-    7. Write Delete tests
-    8. Write Delete routes
+    6. Integrate CI (via Travis CI) # FIXME Stuck on RVM
+    7. Rspec Edit tests √
+    8. Write Edit routes √
+    9. Write Delete tests
+    10. Write Delete routes
 5. Add upvote downvotes for Questions and Answers
     1. Rspec tests
     2. Q upvote && Q downvote
