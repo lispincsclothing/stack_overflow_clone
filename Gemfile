@@ -52,4 +52,5 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'faker'
 end
