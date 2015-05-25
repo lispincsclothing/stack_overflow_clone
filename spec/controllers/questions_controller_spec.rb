@@ -74,7 +74,8 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    #Great illustration below of replacing before with let! (have to use ! since needs to be evaluated before each it block)
+    # Replacing before with let! (have to use ! since needs to be evaluated before each it block)
+    # http://stackoverflow.com/questions/5359558/when-to-use-rspec-let
     # before(:each) do
     #   @myquestion = FactoryGirl.create(:question)
     # end
@@ -84,7 +85,7 @@ RSpec.describe QuestionsController, type: :controller do
       expect(response).to redirect_to questions_url
     end
     it 'deletes the question' do
-      #Illustrating below that one can use myquestion.id, or myquestion as above.
+      # Can use myquestion.id, or myquestion as above.
       expect { delete :destroy, id: myquestion.id }.to change(Question, :count).by(-1)
     end
   end
