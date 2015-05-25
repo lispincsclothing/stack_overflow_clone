@@ -31,7 +31,18 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'POST #create' do
-
+    it 'create accepts valid questions' do
+      form = { title: 'a long enough title', content: 'also long content' }
+      expect {
+        post :create, { question: form}
+      }.to change { Question.count }.by(1)
+    end
+    it 'redirects to questions index page' do
+      form = { title: 'a long enough title', content: 'also long content' }
+      post :create, { question: form}
+      #question_url is the same as question_path in rails
+      expect(response).to redirect_to(questions_url)
+    end
   end
 
   describe 'GET #edit' do
