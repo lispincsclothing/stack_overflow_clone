@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(get_params)
+    @question = Question.create(params_question)
     redirect_to questions_path
   end
 
@@ -16,8 +16,15 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def update
+    @question = Question.find(params[:id])
+    @question.update(params_question)
+    redirect_to question_path(@question)
+  end
+
   private
-  def get_params
-    params.required(:question).permit(:title, :content)
+
+  def params_question
+    params.require(:question).permit(:title, :content)
   end
 end

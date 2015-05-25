@@ -60,11 +60,24 @@ RSpec.describe QuestionsController, type: :controller do
     end
   end
 
-  describe 'PUT #update' do
-
+  describe 'PATCH #update' do
+    # Testing before each vs. let
+    before(:each) do
+      @question = FactoryGirl.create(:question)
+    end
+    it 'changes @question attribute' do
+      put :update, id: @question.id, question: FactoryGirl.attributes_for(:question, title: 'New Title', content: 'New Body')
+      @question.reload
+      expect(@question.title).to eq('New Title')
+      expect(@question.content).to eq('New Body')
+    end
   end
 
   describe 'DELETE #destroy' do
-
+    # let(:myquestion) { FactoryGirl.create :question }
+    # it "renders the #edit page" do
+    #   get :edit, id: myquestion.id
+    #   expect(response).to render_template :index
+    # end
   end
 end
