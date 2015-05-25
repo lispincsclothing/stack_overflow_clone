@@ -24,8 +24,8 @@ Process: Base app created as a full rails app, other technologies will be added 
     8. Write Edit routes √
     9. Rspec update tests √
     10. Write update routes √
-    11. Write Delete tests
-    12. Write Delete routes
+    11. Write Delete tests √
+    12. Write Delete routes √
 5. Add upvote downvotes for Questions and Answers
     1. Rspec tests
     2. Q upvote && Q downvote

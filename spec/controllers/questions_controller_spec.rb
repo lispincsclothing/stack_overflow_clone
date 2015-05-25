@@ -74,10 +74,18 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    # let(:myquestion) { FactoryGirl.create :question }
-    # it "renders the #edit page" do
-    #   get :edit, id: myquestion.id
-    #   expect(response).to render_template :index
+    #Great illustration below of replacing before with let! (have to use ! since needs to be evaluated before each it block)
+    # before(:each) do
+    #   @myquestion = FactoryGirl.create(:question)
     # end
+    let!(:myquestion) { FactoryGirl.create :question }
+    it 'redirects to questions index page' do
+      delete :destroy, id: myquestion
+      expect(response).to redirect_to questions_url
+    end
+    it 'deletes the question' do
+      #Illustrating below that one can use myquestion.id, or myquestion as above.
+      expect { delete :destroy, id: myquestion.id }.to change(Question, :count).by(-1)
+    end
   end
 end
