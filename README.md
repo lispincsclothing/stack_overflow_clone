@@ -7,10 +7,10 @@ Process: Base app created as a full rails app, other technologies will be added 
 2. Basic setup
     1. Rails √
     2. Readme.md (this file) √
-    3. Rspec + config Capybara
+    3. Rspec + config Capybara √
 3. Models
-    1. Rspec tests
-    2. Rails generate models
+    1. Rails generate models √
+    2. Rspec tests
     3. Validation tests
     4. Add validations
 4. CRUD
