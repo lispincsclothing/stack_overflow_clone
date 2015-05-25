@@ -15,7 +15,19 @@ RSpec.describe QuestionsController, type: :controller do
   end
 
   describe 'GET #show' do
-
+    let(:myquestion) { FactoryGirl.create :question }
+    before(:each) do
+      get :show, id: myquestion.id
+    end
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
+    end
+    it 'assigns @question to requested question' do
+      expect(assigns :question).to eq(myquestion)
+    end
+    it 'renders the show page template' do
+      expect(response).to render_template(:show)
+    end
   end
 
   describe 'POST #create' do
