@@ -1,2 +1,3 @@
-1. rails new stack_overflow_clone -T -d=postgresql
-2. 
+1. rails new -h
+2. rails new stack_overflow_clone -T -d=postgresql
+3. 
