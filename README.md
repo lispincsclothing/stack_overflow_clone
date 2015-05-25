@@ -13,13 +13,15 @@ Process: Base app created as a full rails app, other technologies will be added 
     2. Rspec association tests √
     3. Validation tests √
     4. Add validations √
-4. CRUD
-    1. Rspec create tests
-    2. Write create routes (N.B Use form partials)
-    3. Rspec Edit tests
-    4. Write Edit routes
-    5. Write Delete tests
-    6. Write Delete routes
+4. Controllers - CRUD 
+    1. Create routes && redirect home page to questions routes
+    2. Rails generate controllers
+    3. Rspec create tests
+    4. Write create routes (N.B Use form partials)
+    5. Rspec Edit tests
+    6. Write Edit routes
+    7. Write Delete tests
+    8. Write Delete routes
 5. Add upvote downvotes for Questions and Answers
     1. Rspec tests
     2. Q upvote && Q downvote
