@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :questions do
-    resources :answers
+    resources :answers, only: [:create, :edit, :update, :destroy]
   end
   # Example resource route with options:
   #   resources :products do

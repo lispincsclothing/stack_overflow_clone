@@ -13,7 +13,7 @@ Process: Base app created as a full rails app, other technologies will be added 
     2. Rspec association tests √
     3. Validation tests √
     4. Add validations √
-4. Controllers - CRUD 
+4. Controllers - CRUD for question
     1. Create routes && redirect home page to questions routes √
     2. Rails generate controllers √
     3. Seed file for Question and Answers using Faker √
@@ -26,12 +26,22 @@ Process: Base app created as a full rails app, other technologies will be added 
     10. Write update routes √
     11. Write Delete tests √
     12. Write Delete routes √
-5. Add upvote downvotes for Questions and Answers
+5. CRUD - for answers 
+    1. Rspec create tests √
+    2. Write create routes (N.B Use form partials) √
+    3. Add simplecov reports for testing covering √
+    4. Rspec Edit tests 
+    5. Write Edit routes 
+    6. Rspec Update tests 
+    7. Write Update routes 
+    8. Write Delete tests 
+    9. Write Delete routes 
+6. Add upvote downvotes for Questions and Answers
     1. Rspec tests
     2. Q upvote && Q downvote
     3. A upvote && A downvote
-6. Integrate an API (Zenquote?)
-7. AJAX
+7. Integrate an API (Zenquote?)
+8. AJAX
     1. Ajaxify create 
         1. Capybara test
     2. Ajaxify edit
@@ -40,5 +50,5 @@ Process: Base app created as a full rails app, other technologies will be added 
         1. Capybara test
     4. Ajaxify upvote/downvote
         1. Capybara test
-8. Add Markdown widget
-9. Add responsive web design (CSS)
+9. Add Markdown widget
+10. Add responsive web design (CSS)

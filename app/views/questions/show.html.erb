@@ -1,12 +1,16 @@
 <h1><%= @question.title %></h1>
 <h3><%= @question.content %></h2>
+
+<h2>New Answer</h2>
+<%= render partial: 'answers/form' %>
+<h2>Existing Answers</h2>
 <ul>
-  <% @question.answers.each do |answer| %>
+  <% @answers.each do |answer| %>
   <div>
-    <li>
-      <%= answer.title %>
-      <%= answer.content%>
-    </li>
+  <li>
+    <%= answer.title %>,
+    <%= link_to 'Edit', edit_question_answer_path(@question,answer) %>,
+  </li>
   </div>
   <% end %>
 </ul>
