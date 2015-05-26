@@ -31,6 +31,6 @@ class QuestionsController < ApplicationController
   private
 
   def params_question
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :vote_count)
   end
 end

@@ -5,4 +5,5 @@
 5. rails g model Answer title:string content:text question:references
 6. bin/rails g controller answers && bin/rails g controller questions
 7. rake routes
-8. 
+8. rails g migration AddVoteCountToAnswers vote_count:integer
+9. rails g migration AddVoteCountToAnswers vote_count:integer
