@@ -32,13 +32,14 @@ RSpec.describe AnswersController, type: :controller do
   #   end
   # end
 
-  # describe 'GET #edit' do
-  #   let(:myquestion) { FactoryGirl.create :question }
-  #   it "renders the #edit page" do
-  #     get :edit, id: myquestion.id
-  #     expect(response).to render_template :edit
-  #   end
-  # end
+  describe 'GET #edit' do
+    let(:myanswer) { FactoryGirl.create :answer }
+    it "renders the #edit page" do
+      # p myanswer, myanswer.id, myanswer.question
+      get :edit, question_id: myanswer.question.id, id: myanswer.id
+      expect(response).to render_template :edit
+    end
+  end
 
   # describe 'PATCH #update' do
   #   # Testing before each vs. let

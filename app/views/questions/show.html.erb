@@ -2,7 +2,7 @@
 <h3><%= @question.content %></h2>
 
 <h2>New Answer</h2>
-<%= render partial: 'answers/form' %>
+<%= render partial: 'answers/form', locals: {method: 'post', url: question_answers_path(@question)}%>
 <h2>Existing Answers</h2>
 <ul>
   <% @answers.each do |answer| %>

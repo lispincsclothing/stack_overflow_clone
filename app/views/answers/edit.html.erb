@@ -1,0 +1,4 @@
+<h1> Edit your Answer here </h1>
+<div>
+  <%= render partial: 'form', locals: {method: 'patch', url: question_answer_path(@answer.question, @answer)} %>
+</div>

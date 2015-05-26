@@ -1,4 +1,4 @@
-<%= form_for :answer,  url: question_answers_path(@question) do |f| %>
+<%= form_for :answer, method: method, url: url do |f| %>
   <%= f.label "Title" %>
   <%= f.text_area :title %>
   <%= f.label "Content" %>

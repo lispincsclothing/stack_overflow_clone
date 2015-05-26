@@ -30,10 +30,10 @@ Process: Base app created as a full rails app, other technologies will be added 
     1. Rspec create tests √
     2. Write create routes (N.B Use form partials) √
     3. Add simplecov reports for testing covering √
-    4. Rspec Edit tests 
-    5. Write Edit routes 
-    6. Rspec Update tests 
-    7. Write Update routes 
+    4. Rspec Edit tests √
+    5. Write Edit routes √
+    6. Rspec Update tests √
+    7. Write Update routes √
     8. Write Delete tests 
     9. Write Delete routes 
 6. Add upvote downvotes for Questions and Answers
