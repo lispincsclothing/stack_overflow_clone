@@ -36,6 +36,14 @@ RSpec.describe Question, type: :model do
       question_one.answers.create(title: 'a full title', content: 'full content')
       expect { question_one.destroy }.to change { Answer.count }.by(-1)
     end
+    it 'is invalid when vote_count set to less than 0' do
+      question = Question.create(title: 'a full new title', content: 'full content', vote_count:-1)
+      expect(question).to be_invalid
+    end
+    it 'is false and does not set votecount when downvote operation results in vote_count being less 0' do
+      question = Question.create(title: 'a full new title', content: 'full content')
+      expect(question.downvote).to be_falsey
+    end
   end
 
   context '#metatests' do

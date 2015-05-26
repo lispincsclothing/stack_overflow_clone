@@ -8,7 +8,9 @@
   <% @answers.each do |answer| %>
   <div>
   <li>
-    <%= answer.title %>,
+    <%= "#{answer.title} (#{answer.vote_count})" %>
+    <%= button_to '+', upvote_question_answer_path(@question, answer) %>
+    <%= button_to '-', downvote_question_answer_path(@question, answer) %>
     <%= link_to 'Edit', edit_question_answer_path(@question,answer) %>,
      <%= link_to 'Delete', question_answer_path(answer.question, answer), method: :delete%>
   </li>

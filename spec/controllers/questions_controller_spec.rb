@@ -89,4 +89,41 @@ RSpec.describe QuestionsController, type: :controller do
       expect { delete :destroy, id: myquestion.id }.to change(Question, :count).by(-1)
     end
   end
+  # Upvote and downvote tests
+  describe 'POST #upvote' do
+    before(:each) do
+      @question = FactoryGirl.create(:question)
+    end
+    it "adds a vote to the vote count" do
+      expect{
+        post :upvote, id: @question.id
+        # Active Record Reload!!
+        (@question).reload
+      }.to change(@question, :vote_count).by(1)
+    end
+    it "redirects to the question page" do
+      post :upvote, id: @question.id
+      expect(response).to redirect_to(questions_url)
+    end
+  end
+  describe 'POST #downvote' do
+    before(:each) do
+      @question = FactoryGirl.create(:question)
+    end
+
+    it "subtracts a vote from the vote count" do
+      expect{
+        post :upvote, id: @question.id
+        post :upvote, id: @question.id
+        post :downvote, id: @question.id
+        # Active Record Reload!!
+        (@question).reload
+      }.to change(@question, :vote_count).by(1)
+    end
+
+    it "redirects to the question page" do
+      post :upvote, id: @question.id
+      expect(response).to redirect_to(questions_url)
+    end
+  end
 end
