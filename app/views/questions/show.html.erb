@@ -10,6 +10,7 @@
   <li>
     <%= answer.title %>,
     <%= link_to 'Edit', edit_question_answer_path(@question,answer) %>,
+     <%= link_to 'Delete', question_answer_path(answer.question, answer), method: :delete%>
   </li>
   </div>
   <% end %>
