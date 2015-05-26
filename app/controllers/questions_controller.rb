@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
+include ZenQuote
   def index
+    @quote = get_quote
     @questions = Question.order('created_at DESC')
   end
 

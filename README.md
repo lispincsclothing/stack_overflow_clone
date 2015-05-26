@@ -38,10 +38,10 @@ Process: Base app created as a full rails app, other technologies will be added 
     9. Write Delete routes √
 6. Add upvote downvotes for Questions and Answers
     1. Modify Question and Answer model to include votes √
-    2. Rspec tests
-    2. Q upvote && Q downvote
-    3. A upvote && A downvote
-7. Integrate an API (Zenquote?)
+    2. Rspec tests √
+    3. Q upvote && Q downvote √
+    4. A upvote && A downvote √
+7. Integrate an API (Zenquote?) √
 8. AJAX
     1. Ajaxify create 
         1. Capybara test
