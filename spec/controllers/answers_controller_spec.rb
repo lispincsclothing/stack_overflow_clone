@@ -25,48 +25,34 @@ RSpec.describe AnswersController, type: :controller do
     end
   end
 
-  # describe 'GET #new' do
-  #   it 'renders the new question template' do
-  #     get :new
-  #     expect(response).to render_template(:new)
-  #   end
-  # end
-
   describe 'GET #edit' do
     let(:myanswer) { FactoryGirl.create :answer }
     it "renders the #edit page" do
-      # p myanswer, myanswer.id, myanswer.question
       get :edit, question_id: myanswer.question.id, id: myanswer.id
       expect(response).to render_template :edit
     end
   end
 
-  # describe 'PATCH #update' do
-  #   # Testing before each vs. let
-  #   before(:each) do
-  #     @question = FactoryGirl.create(:question)
-  #   end
-  #   it 'changes @question attribute' do
-  #     put :update, id: @question.id, question: FactoryGirl.attributes_for(:question, title: 'New Title', content: 'New Body')
-  #     @question.reload
-  #     expect(@question.title).to eq('New Title')
-  #     expect(@question.content).to eq('New Body')
-  #   end
-  # end
+  describe 'PATCH #update' do
+    it 'changes @answer attribute' do
+      put :update, question_id: @myquestion.id, id: @myanswer.id, answer: {title: 'New Title', content: 'New Body'}
+      expect(Answer.find(@myanswer.id).title).to eq('New Title')
+    end
+  end
 
-  # describe 'DELETE #destroy' do
-  #   # Replacing before with let! (have to use ! since needs to be evaluated before each it block)
-  #   # http://stackoverflow.com/questions/5359558/when-to-use-rspec-let
-  #   # before(:each) do
-  #   #   @myquestion = FactoryGirl.create(:question)
-  #   # end
-  #   let!(:myquestion) { FactoryGirl.create :question }
-  #   it 'redirects to questions index page' do
-  #     delete :destroy, id: myquestion
-  #     expect(response).to redirect_to questions_url
-  #   end
-  #   it 'deletes the question' do
-  #     # Can use myquestion.id, or myquestion as above.
-  #     expect { delete :destroy, id: myquestion.id }.to change(Question, :count).by(-1)
-  #   end
+  describe 'DELETE #destroy' do
+    # Don't need below since already defined in before block above - kept for illustrative purposes (Factorygirl alternative)
+    #  before(:each) do
+    #   @question = FactoryGirl.create(:question)
+    #   @answer = FactoryGirl.create(:answer)
+    #   @question.answers << @answer
+    # end
+    it 'deletes the answer' do
+      expect { delete :destroy, question_id: @myquestion.id, id: @myanswer.id }.to change(Answer, :count).by(-1)
+    end
+    it 'redirects to question show page' do
+      delete :destroy, question_id: @myquestion.id, id: @myanswer.id
+      expect(response).to redirect_to question_url(@myquestion)
+    end
+  end
 end
