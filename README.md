@@ -43,8 +43,9 @@ Process: Base app created as a full rails app, other technologies will be added 
     4. A upvote && A downvote √
 7. Integrate an API (Zenquote?) √
 8. Styling website
-    1. Install CSS vendor assets (bootstrap, normalize)
-    2. Include in asset pipeline for app
+    1. Install CSS vendor assets (bootstrap, normalize) √
+    2. Include CSS in asset pipeline for app √
+    3. Style question page
 9. AJAX
     1. Ajaxify create 
         1. Capybara test
