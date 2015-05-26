@@ -42,7 +42,10 @@ Process: Base app created as a full rails app, other technologies will be added 
     3. Q upvote && Q downvote √
     4. A upvote && A downvote √
 7. Integrate an API (Zenquote?) √
-8. AJAX
+8. Styling website
+    1. Install CSS vendor assets (bootstrap, normalize)
+    2. Include in asset pipeline for app
+9. AJAX
     1. Ajaxify create 
         1. Capybara test
     2. Ajaxify edit
@@ -51,7 +54,7 @@ Process: Base app created as a full rails app, other technologies will be added 
         1. Capybara test
     4. Ajaxify upvote/downvote
         1. Capybara test
-9. Add Markdown widget
-10. Add responsive web design (CSS)
-11. Add Feature tests
+10. Add Markdown widget
+11. Add responsive web design (CSS)
+12. Add Feature tests
     1. Check for difference between update and new for question and answer
