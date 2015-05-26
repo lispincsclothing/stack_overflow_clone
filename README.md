@@ -46,6 +46,7 @@ Process: Base app created as a full rails app, other technologies will be added 
     1. Install CSS vendor assets (bootstrap, normalize) √
     2. Include CSS in asset pipeline for app √
     3. Style question page
+    4. Style answer page
 9. AJAX
     1. Ajaxify create 
         1. Capybara test
