@@ -54,4 +54,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'httparty'
+  gem 'handlebars_assets'
 end
