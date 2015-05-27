@@ -45,17 +45,17 @@ Process: Base app created as a full rails app, other technologies will be added 
 8. Styling website
     1. Install CSS vendor assets (bootstrap, normalize) √
     2. Include CSS in asset pipeline for app √
-    3. Install gem handlebars_assets (https://github.com/leshill/handlebars_assets)
-    4. Style question pages
-    5. Style answer pages
+    3. Install gem handlebars_assets (https://github.com/leshill/handlebars_assets) √
+    4. Style question pages √
+    5. Style answer pages 
 9. AJAX
-    1. Ajaxify create 
+    1. Ajaxify create √
         1. Capybara test
-    2. Ajaxify edit
+    2. Ajaxify upvote/downvote √
         1. Capybara test 
     3. Ajaxify delete
         1. Capybara test
-    4. Ajaxify upvote/downvote
+    4. Ajaxify edit 
         1. Capybara test
 10. Add Markdown widget
 11. Add responsive web design (CSS)

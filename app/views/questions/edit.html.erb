@@ -1,4 +1,4 @@
 <h1> Edit your Question here </h1>
 <div>
-  <%= render partial: 'form' %>
+  <%= render partial: 'form',  locals: {url: question_path(@question), method: :patch} %>
 </div>
