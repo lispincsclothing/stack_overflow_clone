@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-include ZenQuote
+  include ZenQuote
   def index
     @quote = get_quote
     @questions = Question.order('created_at DESC')
@@ -11,8 +11,17 @@ include ZenQuote
   end
 
   def create
-    @question = Question.create(params_question)
-    redirect_to questions_path
+    @question = Question.new(params_question)
+    # @error = @question.errors.full_messages.to_sentence
+    respond_to do |format|
+      if @question.save
+        format.html {redirect_to question_path(@question)}
+        format.json {render json: @question}
+      else
+        format.html {render 'index'}
+        format.json {render json: @error, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
@@ -32,14 +41,28 @@ include ZenQuote
 
   def upvote
     @question = Question.find(params[:id])
-    @question.upvote
-    redirect_to questions_path
+    respond_to do |format|
+      if @question.upvote
+        format.html {redirect_to questions_path}
+        format.json {render json: @question}
+      else
+        format.html {render 'index'}
+        format.json {render json: @errors}
+      end
+    end
   end
 
   def downvote
     @question = Question.find(params[:id])
-    @question.downvote
-    redirect_to questions_path
+    respond_to do |format|
+      if @question.downvote
+        format.html {redirect_to questions_path}
+        format.json {render json: @question}
+      else
+        format.html {render 'index'}
+        format.json {render json: @errors}
+      end
+    end
   end
 
   private

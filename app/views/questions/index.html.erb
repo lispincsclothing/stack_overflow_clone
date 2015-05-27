@@ -1,16 +1,56 @@
 <h1>Stack Overflow Clone</h1>
-<h3>Quote of the day: <%= @quote %></h3>
-<h2>New Question</h2>
-<%= render partial: 'form' %>
-<h2>Existing Questions</h2>
-<% @questions.each do |question|%>
-<div>
-  <li>
-    <%= link_to "#{question.title} (#{question.vote_count})", question_path(question)%>
-    <%= button_to '+', upvote_question_path(question) %>
-    <%= button_to '-', downvote_question_path(question) %>
-    <%= link_to 'Edit', edit_question_path(question) %>,
-    <%= link_to 'Delete', question, method: :destroy, data: { confirm: 'You sure?' } %>
-  </li>
+<div class="row container-fluid">
+  <h3>Quote of the day: <%= @quote %></h3>
 </div>
-<% end %>
+<div class="row container-fluid">
+  <div class="col-med-12">
+    <h2>New Question</h2>
+  </div>
+</div>
+<div class="row container-fluid" id="new_Q">
+  <%= render partial: 'form' ,  locals: {url: questions_path, method: :post}%>
+</div>
+<div class="row container-fluid" id="questions_box">
+  <h2>Existing Questions</h2>
+  <% @questions.each do |question|%>
+</div>
+<div class="row container-fluid" id="id_<%= question.id %>">
+  <div class="col-md-10">
+    <div class="col-md-2 vote_count">
+      <span>
+        <%= question.vote_count %>
+      </span>
+      <%= button_to '+', upvote_question_path(question) %>
+      <%= button_to '-', downvote_question_path(question) %>
+    </div>
+    <div class="col-md-8">
+      <%= link_to "#{question.title} )", question_path(question)%>
+    </div>
+  </div>
+  <div class="col-md-2">
+    <%= link_to 'Edit', edit_question_path(question) %>,
+    <%= link_to 'Delete', question_path(question), method: :delete, data: { confirm: 'You sure?' } %>
+  </div>
+  <% end %>
+</div>
+<!-- Handlebars script -->
+<script id="new-question-form" type="text/x-handlebars-template">
+<div class="row container-fluid" id="id_{{id}}">
+  <div class="col-md-10">
+    <div class="col-md-2 vote_count">
+      <span>
+        Votes: {{vote_count}}
+      </span>
+      <form class="button_to" method="post" action="/questions/{{id}}/upvote">
+        <input type="submit" value="Upvote">
+      </form>
+      <form class="button_to" method="post" action="/questions/{{id}}/downvote">
+        <input type="submit" value="Downvote">
+      </form>
+    </div>
+    <div class="col-md-8">
+      <a href="/questions/{{id}}">{{title}}</a>
+    </div>
+  </div>
+</div>
+</script>

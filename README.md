@@ -46,8 +46,8 @@ Process: Base app created as a full rails app, other technologies will be added 
     1. Install CSS vendor assets (bootstrap, normalize) √
     2. Include CSS in asset pipeline for app √
     3. Install gem handlebars_assets (https://github.com/leshill/handlebars_assets)
-    4. Style question page
-    5. Style answer page
+    4. Style question pages
+    5. Style answer pages
 9. AJAX
     1. Ajaxify create 
         1. Capybara test
