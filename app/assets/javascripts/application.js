@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require handlebars/handlebars
+//= require typeahead.js/typeahead.bundle

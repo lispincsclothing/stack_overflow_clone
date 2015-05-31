@@ -1,4 +1,5 @@
 class Answer < ActiveRecord::Base
+  searchkick autocomplete: ['title']
   belongs_to :question
 
   validates :title, :content, presence: true, length: {minimum: 6}

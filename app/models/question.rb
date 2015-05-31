@@ -1,4 +1,5 @@
 class Question < ActiveRecord::Base
+  searchkick autocomplete: ['title']
   has_many :answers, dependent: :destroy
 
   validates :title, :content, presence: true, length: { minimum: 6 }

@@ -3,6 +3,19 @@
   <h3>Quote of the day: <%= @quote %></h3>
 </div>
 <div class="row container-fluid">
+  <%= form_tag questions_path, class: "form-inline", method: :get do %>
+  <div class="input-group input-group-lg col-med-12">
+    <% if params[:query].present? %>
+    <div class="input-group-btn">
+      <%= link_to "clear", questions_path, class: "btn btn-default" %>
+    </div>
+    <% end %>
+    <%= text_field_tag :query, params[:query], class: "form-control", id: "question_search", autocomplete: "off" %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>
+<div class="row container-fluid">
   <div class="col-med-12">
     <h2>New Question</h2>
   </div>

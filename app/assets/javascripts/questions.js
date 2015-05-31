@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  'use strict';
   var bindEvents = function() {
     $('#new_Q form').on('click', 'input[type="submit"]', submitNewQuestion);
     $('body').on('click', '.button_to input[type="submit"]', runVote);
@@ -73,4 +74,8 @@ $(document).ready(function() {
 
   // At runtime:
   bindEvents();
+  return $('#question_search').typeahead({
+    name: "question",
+    remote: "/questions/autocomplete?query=%QUERY"
+  });
 });

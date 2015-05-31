@@ -2,7 +2,11 @@ class QuestionsController < ApplicationController
   include ZenQuote
   def index
     @quote = get_quote
-    @questions = Question.order('created_at DESC')
+    if params[:query].present?
+      @questions = Question.search(params[:query], page: params[:page])
+    else
+      @questions = Question.order('created_at DESC')
+    end
   end
 
   def show
@@ -64,6 +68,10 @@ class QuestionsController < ApplicationController
         format.json {render json: @errors}
       end
     end
+  end
+
+  def autocomplete
+    render json: Question.search(params[:query], autocomplete: true, limit: 10).map(&:title)
   end
 
   private

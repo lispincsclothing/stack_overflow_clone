@@ -8,11 +8,13 @@ Rails.application.routes.draw do
    member do
       post 'upvote'
       post 'downvote'
+      get :autocomplete
     end
     resources :answers, only: [:create, :edit, :update, :destroy] do
       member do
         post 'upvote'
         post 'downvote'
+        get :autocomplete
       end
     end
   end

@@ -15,10 +15,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+#My changes to main
 #Use blower installed of jquery-rails (and other gems to install components)
 gem 'bower-rails'
-# # Use jquery as the JavaScript library
-# gem 'jquery-rails'
+# Using searchkick in conjunction with elastic search
+gem "searchkick"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

@@ -38,6 +38,10 @@ class AnswersController < ApplicationController
     redirect_to question_path(@question)
   end
 
+  def autocomplete
+    render json: Answer.search(params[:query], autocomplete: true, limit: 10).map(&:title)
+  end
+
   private
 
   def params_answer
