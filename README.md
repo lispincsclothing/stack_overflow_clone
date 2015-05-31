@@ -61,3 +61,8 @@ Process: Base app created as a full rails app, other technologies will be added 
 11. Add responsive web design (CSS)
 12. Add Feature tests
     1. Check for difference between update and new for question and answer
+13. Add Elastic search (https://shellycloud.com/blog/2013/10/adding-search-and-autocomplete-to-a-rails-app-with-elasticsearch)
+    1. Searchkick
+    2. Bower (http://dotwell.io/taking-advantage-of-bower-in-your-rails-4-app/) √
+    3. Bower_installer (https://scotch.io/tutorials/only-grab-the-files-you-need-while-using-bower) √
+    4. Autocomplete

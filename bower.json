@@ -1,0 +1,42 @@
+{
+  "name": "stack_overflow_clone",
+  "version": "0.0.0",
+  "homepage": "https://github.com/lispincsclothing/stack_overflow_clone",
+  "authors": [
+    "lispincsclothing"
+  ],
+  "description": "Testing technologies via stack overflow clone",
+  "main": "app/assets/javascripts/application.js, app/assets/stylesheets/application.css",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": {
+      "css": "vendor/assets/stylesheets",
+      "less": "vendor/assets/stylesheets",
+      "js": "vendor/assets/javascripts",
+      "eot": "vendor/assets/fonts",
+      "svg": "vendor/assets/fonts",
+      "ttf": "vendor/assets/fonts",
+      "woff": "vendor/assets/fonts",
+      "woff2": "vendor/assets/fonts"
+    }
+  },
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-ujs": "~1.0.3",
+    "bootstrap": "~3.3.4",
+    "handlebars": "~3.0.3",
+    "normalize": "~1.0.4",
+    "normalize-css": "~3.0.3"
+  }
+}
