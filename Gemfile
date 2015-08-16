@@ -55,4 +55,6 @@ group :development, :test do
   gem 'faker'
   gem 'httparty'
   gem 'handlebars_assets'
+  # Include rake for travis ci
+  gem 'rake'
 end
