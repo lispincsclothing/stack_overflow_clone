@@ -48,7 +48,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 2.45.0'
   gem 'chromedriver-helper'
   gem 'launchy'
   gem 'database_cleaner'
